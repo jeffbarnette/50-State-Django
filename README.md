@@ -73,7 +73,7 @@ All 50 U.S. States and their capital cities. An example written in Python using 
 
 - **Deploying app to AWS (Using Elastic Beanstalk)**
 
-  1. You will need to make sure you have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed, then install the EB (Elastic Beanstalk) CLI. If you have Python 3 and pip installed  you can run:
+  1. Make sure you have the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed, then install the EB (Elastic Beanstalk) CLI. If you have Python 3 and pip installed  you can run:
 
   ```
   pip3 install awsebcli --upgrade --user
