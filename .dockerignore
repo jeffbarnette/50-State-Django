@@ -1,0 +1,6 @@
+.git
+.dockerignore
+Dockerfile
+Dockerfile.prod
+docker-compose.yml
+docker-compose.prod.yml

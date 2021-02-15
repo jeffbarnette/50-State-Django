@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  web:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: >-
+          gunicorn capitals.wsgi:application --bind 0.0.0.0:8000
+          --worker-tmp-dir /dev/shm --workers 2 --threads=1 
+          --worker-class=gthread --timeout 10 --log-file=-
+          --log-level debug
+    volumes:
+      - static_volume:/home/app/web/static
+    ports:
+      - 8000
+    env_file:
+      - ./.env.prod
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: postgres:13.2-alpine
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres_capitals
+      - POSTGRES_PASSWORD=postgres_capitals
+      - POSTGRES_DB=postgres_capitals_prod
+  nginx:
+    restart: always
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/static
+    ports:
+      - 80:80
+    depends_on:
+      - web
+
+volumes:
+  postgres_prod_data:
+  static_volume:

@@ -1,0 +1,10 @@
+{% extends 'location/base.html' %}
+
+{% block content %}
+    {% for state in states %}
+    <div class="center" id="{{ state.abbr }}">
+        <h3>{{ state.name }}</h3>
+        <p>{{ state.capital }}</p>
+    </div>
+    {% endfor %}
+{% endblock content %}
