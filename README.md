@@ -83,6 +83,10 @@ All 50 U.S. States and their capital cities. An example written in Python using 
 
   3. Once complete, you can use the `eb list` command to see a list of currently running applications.
 
+  4. To view the site in a browser, run `eb open`. 
+
+  5. Once you are done with the applicaiton and wish to remove it and all of the resources it uses, run `eb terminate --all`.
+
 
 ## Changelog
 
