@@ -7,4 +7,9 @@
         <p>{{ state.capital }}</p>
     </div>
     {% endfor %}
+    {% if states.message %}
+    <div class="center" id="message">
+        <h4>{{ states.message }}</h4>
+    </div>
+    {% endif %}
 {% endblock content %}

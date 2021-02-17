@@ -29,7 +29,13 @@ All 50 U.S. States and their capital cities. An example written in Python using 
     docker-compose up
     ```
   
-  2. Once the container is up and running, you should be able to view the app by opening your browser to [http://127.0.0.1](http://127.0.0.1).
+  2. Once the container is up and running, you should be able to view the app by opening your browser to [http://127.0.0.1](http://127.0.0.1). This will show a list of all 50 states and their capitals.
+
+  3. Next, try using a query string in the URL to just get details on a specific state or capital. 
+  
+    Use [http://127.0.0.1/?state=SC](http://127.0.0.1/?state=SC) or [http://127.0.0.1/?state=South_Carolina](http://127.0.0.1/?state=South_Carolina) to get details for a specific state. Optionally you can write a state name made up of two words with a space instead of an underscore. The name or abbreviation is not case sensitive.
+    
+    Use [http://127.0.0.1/?capital=Columbia](http://127.0.0.1/?capital=Columbia) to get back the state for a specific capital name. Like with the state name, you can also write a capital name made up of two words with a space instead of an underscore. The name is also not case sensitive.
 
 - **Accessing Django Admin**
 
@@ -58,7 +64,7 @@ All 50 U.S. States and their capital cities. An example written in Python using 
   flake8
   ```
   
-  Next, to run the 17 unit and integration tests, use the following command:
+  Next, to run all 25 of the unit and integration tests, use the following command:
 
   ```
   python manage.py test
@@ -89,6 +95,10 @@ All 50 U.S. States and their capital cities. An example written in Python using 
 
 
 ## Changelog
+
+**v1.1.0**
+- Added querystring support for _state_ and _capital_.
+- Added additional unit and integration tests.
 
 **v1.0.0**
 - Initial Release
